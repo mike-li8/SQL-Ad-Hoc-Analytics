@@ -406,10 +406,67 @@ ORDER BY s.date ASC;
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.7_Request.PNG?raw=true)
 
 
+🔍 SQL Stored Procedure:
+```
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_monthly_gross_sales_for_customers`(
+	in_customer_codes TEXT
+)
+BEGIN
+
+	SELECT
+		s.date,
+		ROUND(SUM(g.gross_price * s.sold_quantity),2) AS gross_price_total
+	FROM fact_sales_monthly s
+	JOIN fact_gross_price g
+	ON
+		s.product_code=g.product_code AND
+		get_fiscal_year(s.date)=g.fiscal_year
+	WHERE FIND_IN_SET(s.customer_code, in_customer_codes) > 0
+	GROUP BY s.date
+	ORDER BY s.date ASC;
+END
+```
+
+
+
+
 ### Ad Hoc Request 7.8
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.8_Request.PNG?raw=true)
 
-
+🔍 SQL Stored Procedure:
+```
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_market_badge`(
+	IN in_market VARCHAR(45),
+    IN in_fiscal_year YEAR,
+    OUT out_badge VARCHAR(45)
+)
+BEGIN
+	DECLARE qty INT DEFAULT 0;
+    
+    # Set default market to be india
+    IF in_market = "" THEN
+		SET in_market="India";
+	END IF;
+    
+    # retrieve total qty for a given market and fiscal year
+	SELECT
+		SUM(s.sold_quantity) INTO qty
+	FROM fact_sales_monthly s
+	LEFT JOIN dim_customer c
+	ON s.customer_code=c.customer_code
+	WHERE
+		get_fiscal_year(s.date)=in_fiscal_year AND
+		c.market=in_market
+	GROUP BY c.market;
+    
+    # Determine market badge
+    IF qty>5000000 THEN
+		SET out_badge = "Gold";
+	ELSE
+		SET out_badge = "Silver";
+    END IF;
+END
+```
 
 
 
