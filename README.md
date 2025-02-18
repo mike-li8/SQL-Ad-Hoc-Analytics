@@ -122,14 +122,7 @@ AtliQ's fiscal year begins in September and ends in August the following year. T
 ### Dimension Tables
 AtliQ's data engineers prepared various dimension tables and stored them in a MySQL database schema. Sample records from each table are provided below. For readability, primary key values for some tables have been converted to natural numbers.
 
-**dim_market**
-| market | sub_zone | region |
-| :- | :- | :- |
-| Japan | ROA | APAC |
-| Sweden | NE | EU |
-| Brazil | LATAM | LATAM |
 
-`market` is a primary key field.
 
 **dim_customer**
 | 	customer_code	 | 	customer	 | 	market	 | 	platform	 | 	channel	 |
@@ -209,7 +202,7 @@ Notes:
 * The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
 
 
-freight_cost
+fact_freight_cost
 | 	market	 | 	fiscal_year	 | 	freight_pct	 | 	other_cost_pct	 |
 | 	:-	 | 	-:	 | 	-:	 | 	-:	 |
 | 	Australia	 | 	2018	 | 	0.0188	 | 	0.005	 |
@@ -228,7 +221,7 @@ Notes:
 * The columns `market` and `fiscal_year` make up a **composite primary key**.
 
 
-gross_price
+fact_gross_price
 | 	product_code	 | 	fiscal_year	 | 	gross_price	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	2018	 | 	19.363	 |
@@ -247,7 +240,7 @@ Notes:
 * The columns `product_code` and `fiscal_year` make up a **composite primary key**.
 
 
-manufacturing_cost
+fact_manufacturing_cost
 | 	product_code	 | 	cost_year	 | 	manufacturing_cost	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	2018	 | 	5.9469	 |
@@ -268,7 +261,7 @@ Notes:
 
 
 
-post_invoice_deductions
+fact_post_invoice_deductions
 | 	customer_code	 | 	product_code	 | 	date	 | 	discounts_pct	 | 	other_deductions_pct	 |
 | 	-:	 | 	-:	 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	1	 | 	2021-09-01	 | 	0.243105105	 | 	0.064459945	 |
@@ -285,7 +278,7 @@ Notes:
 * The columns `customer_code`, `product_code` and `date` make up a **composite primary key**.
 
 
-pre_invoice_deductions
+fact_pre_invoice_deductions
 | 	customer_code	 | 	fiscal_year	 | 	pre_invoice_discount_pct	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	2018	 | 	0.082442198	 |
@@ -306,5 +299,5 @@ Notes:
 
 
 
-<details>
-  <summary><b>Additional Data Tables</b></summary>
+
+
