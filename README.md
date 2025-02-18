@@ -125,15 +125,16 @@ AtliQ's data engineers prepared various dimension tables and stored them in a My
 
 
 **dim_customer**
-| 	customer_code	 | 	customer	 | 	market	 | 	platform	 | 	channel	 |
-| 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
-| 	1	 | 	Amazon	 | 	USA	 | 	E-Commerce	 | 	Retailer	 |
-| 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 |
-| 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 |
-| 	4	 | 	Staples	 | 	Canada	 | 	Brick & Mortar	 | 	Retailer	 |
-| 	5	 | 	AltiQ Exclusive	 | 	South Korea	 | 	Brick & Mortar	 | 	Direct	 |
-| 	6	 | 	Atliq e Store	 | 	Newzealand	 | 	E-Commerce	 | 	Direct	 |
-| 	7	 | 	Neptune	 | 	China	 | 	Brick & Mortar	 | 	Distributor	 |
+| 	customer_code	 | 	customer	 | 	platform	 | 	channel	 | 	market	 | 	sub_zone	 | 	region	 |
+| 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
+| 	1	 | 	Amazon	 | 	E-Commerce	 | 	Retailer	 | 	USA	 | 	NA	 | 	NA	 |
+| 	2	 | 	Amazon	 | 	E-Commerce	 | 	Retailer	 | 	Japan	 | 	ROA	 | 	APAC	 |
+| 	3	 | 	Staples	 | 	Brick & Mortar	 | 	Retailer	 | 	USA	 | 	NA	 | 	NA	 |
+| 	4	 | 	Staples	 | 	Brick & Mortar	 | 	Retailer	 | 	Canada	 | 	NA	 | 	NA	 |
+| 	5	 | 	AltiQ Exclusive	 | 	Brick & Mortar	 | 	Direct	 | 	South Korea	 | 	ROA	 | 	APAC	 |
+| 	6	 | 	Atliq e Store	 | 	E-Commerce	 | 	Direct	 | 	Newzealand	 | 	ANZ	 | 	APAC	 |
+| 	7	 | 	Neptune	 | 	Brick & Mortar	 | 	Distributor	 | 	China	 | 	ROA	 | 	APAC	 |
+
 
 `customer_code` is a primary key field. 
 
@@ -163,42 +164,42 @@ AtliQ's data engineers prepared various dimension tables and stored them in a My
 AtliQ's data engineers prepared various fact tables and stored them in a MySQL database schema. Sample records from each table are provided below.
 
 fact_forecast_monthly
-| 	date	 | 	product_code	 | 	division	 | 	category	 | 	product	 | 	customer_code	 | 	customer_name	 | 	market	 | 	platform	 | 	channel	 | 	forecast_quantity	 |
-| 	-:	 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	-:	 |
-| 	2018-09-01	 | 	1	 | 	P & A	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	1	 | 	Amazon	 | 	USA	 | 	E-Commerce	 | 	Retailer	 | 	107	 |
-| 	2018-09-01	 | 	2	 | 	P & A	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 | 	13	 |
-| 	2018-10-01	 | 	3	 | 	P & A	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	4	 | 	Staples	 | 	Canada	 | 	Brick&nbsp;&&nbsp;Mortar	 | 	Retailer	 | 	63	 |
-| 	2018-10-01	 | 	4	 | 	P & A	 | 	Mouse	 | 	AQ&nbsp;Master&nbsp;wired&nbsp;x1&nbsp;Ms	 | 	4	 | 	Staples	 | 	Canada	 | 	Brick & Mortar	 | 	Retailer	 | 	81	 |
-| 	2018-11-01	 | 	5	 | 	PC	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	5	 | 	AltiQ Exclusive	 | 	South Korea	 | 	Brick & Mortar	 | 	Direct	 | 	186	 |
-| 	2018-11-01	 | 	6	 | 	PC	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 | 	19	 |
-| 	2018-12-01	 | 	7	 | 	N & S	 | 	Wi fi extender	 | 	AQ Wi Power Dx1	 | 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 | 	91	 |
-| 	2018-12-01	 | 	8	 | 	N & S	 | 	Wi fi extender	 | 	AQ Wi Power Dx2	 | 	6	 | 	Atliq e Store	 | 	Newzealand	 | 	E-Commerce	 | 	Direct	 | 	121	 |
-| 	2019-01-01	 | 	9	 | 	N & S	 | 	External Solid State Drives	 | 	AQ Digit SSD	 | 	7	 | 	Neptune	 | 	China	 | 	Brick & Mortar	 | 	Distributor	 | 	106	 |
-| 	2019-01-01	 | 	10	 | 	N & S	 | 	External&nbsp;Solid&nbsp;State&nbsp;Drives	 | 	AQ Neuer SSD	 | 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 | 	90	 |
+| 	date	 | 	fiscal_year	 | 	product_code	 | 	customer_code	 | 	forecast_quantity	 |
+| 	-:	 | 	-:	 | 	-:	 | 	-:	 | 	-:	 |
+| 	2018-09-01	 | 	2019	 | 	1	 | 	1	 | 	107	 |
+| 	2018-09-01	 | 	2019	 | 	2	 | 	2	 | 	13	 |
+| 	2018-10-01	 | 	2019	 | 	3	 | 	4	 | 	63	 |
+| 	2018-10-01	 | 	2019	 | 	4	 | 	4	 | 	81	 |
+| 	2018-11-01	 | 	2019	 | 	5	 | 	5	 | 	186	 |
+| 	2018-11-01	 | 	2019	 | 	6	 | 	2	 | 	19	 |
+| 	2018-12-01	 | 	2019	 | 	7	 | 	3	 | 	91	 |
+| 	2018-12-01	 | 	2019	 | 	8	 | 	6	 | 	121	 |
+| 	2019-01-01	 | 	2019	 | 	9	 | 	7	 | 	106	 |
+| 	2019-01-01	 | 	2019	 | 	10	 | 	3	 | 	90	 |
+
 
 Notes:
 * This table contains data on the predicted quantity of a product required for a specific customer, on a monthly level.
-* The data engineer provided this table in **denormalized** format.
 * The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
 
 
 fact_sales_monthly
-| 	date	 | 	product_code	 | 	division	 | 	category	 | 	product	 | 	customer_code	 | 	customer_name	 | 	market	 | 	platform	 | 	channel	 | 	sold_quantity	 |
-| 	-:	 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	-:	 |
-| 	2018-09-01	 | 	1	 | 	P & A	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	1	 | 	Amazon	 | 	USA	 | 	E-Commerce	 | 	Retailer	 | 	70	 |
-| 	2018-09-01	 | 	2	 | 	P & A	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 | 	152	 |
-| 	2018-10-01	 | 	3	 | 	P & A	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	4	 | 	Staples	 | 	Canada	 | 	Brick&nbsp;&&nbsp;Mortar	 | 	Retailer	 | 	129	 |
-| 	2018-10-01	 | 	4	 | 	P & A	 | 	Mouse	 | 	AQ&nbsp;Master&nbsp;wired&nbsp;x1&nbsp;Ms	 | 	4	 | 	Staples	 | 	Canada	 | 	Brick & Mortar	 | 	Retailer	 | 	60	 |
-| 	2018-11-01	 | 	5	 | 	PC	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	5	 | 	AltiQ Exclusive	 | 	South Korea	 | 	Brick & Mortar	 | 	Direct	 | 	164	 |
-| 	2018-11-01	 | 	6	 | 	PC	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 | 	158	 |
-| 	2018-12-01	 | 	7	 | 	N & S	 | 	Wi fi extender	 | 	AQ Wi Power Dx1	 | 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 | 	163	 |
-| 	2018-12-01	 | 	8	 | 	N & S	 | 	Wi fi extender	 | 	AQ Wi Power Dx2	 | 	6	 | 	Atliq e Store	 | 	Newzealand	 | 	E-Commerce	 | 	Direct	 | 	66	 |
-| 	2019-01-01	 | 	9	 | 	N & S	 | 	External Solid State Drives	 | 	AQ Digit SSD	 | 	7	 | 	Neptune	 | 	China	 | 	Brick & Mortar	 | 	Distributor	 | 	140	 |
-| 	2019-01-01	 | 	10	 | 	N & S	 | 	External&nbsp;Solid&nbsp;State&nbsp;Drives	 | 	AQ Neuer SSD	 | 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 | 	61	 |
+| 	date	 | 	fiscal_year	 | 	product_code	 | 	customer_code	 | 	sold_quantity	 |
+| 	-:	 | 	-:	 | 	-:	 | 	-:	 | 	-:	 |
+| 	2018-09-01	 | 	2019	 | 	1	 | 	1	 | 	70	 |
+| 	2018-09-01	 | 	2019	 | 	2	 | 	2	 | 	152	 |
+| 	2018-10-01	 | 	2019	 | 	3	 | 	4	 | 	129	 |
+| 	2018-10-01	 | 	2019	 | 	4	 | 	4	 | 	60	 |
+| 	2018-11-01	 | 	2019	 | 	5	 | 	5	 | 	164	 |
+| 	2018-11-01	 | 	2019	 | 	6	 | 	2	 | 	158	 |
+| 	2018-12-01	 | 	2019	 | 	7	 | 	3	 | 	163	 |
+| 	2018-12-01	 | 	2019	 | 	8	 | 	6	 | 	66	 |
+| 	2019-01-01	 | 	2019	 | 	9	 | 	7	 | 	140	 |
+| 	2019-01-01	 | 	2019	 | 	10	 | 	3	 | 	61	 |
+
 
 Notes:
 * This table contains data on the actual sold quantity of a product for a specific customer, on a monthly level.
-* The data engineer provided this table in **denormalized** format.
 * The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
 
 
