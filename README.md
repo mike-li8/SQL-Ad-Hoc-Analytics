@@ -120,11 +120,11 @@ AtliQ's fiscal year begins in September and ends in August the following year. T
   <summary><b>Dimension Tables</b></summary>
 
 ### Dimension Tables
-AtliQ's data engineers prepared various dimension tables and stored them in a MySQL database schema. Sample records from each table are provided below. For readability, primary key values for some tables have been converted to natural numbers.
+AtliQ's data engineers prepared various dimension tables and stored them in a MySQL database schema called `gdb0041`. Sample records from each table are provided below. For readability, primary key values for some tables have been converted to natural numbers.
 
 
 
-**dim_customer**
+**gdb0041.dim_customer**
 | 	customer_code	 | 	customer	 | 	platform	 | 	channel	 | 	market	 | 	sub_zone	 | 	region	 |
 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
 | 	1	 | 	Amazon	 | 	E-Commerce	 | 	Retailer	 | 	USA	 | 	NA	 | 	NA	 |
@@ -138,7 +138,7 @@ AtliQ's data engineers prepared various dimension tables and stored them in a My
 
 `customer_code` is a primary key field. 
 
-**dim_product**
+**gdb0041.dim_product**
 | 	product_code	 | 	division	 | 	segment	 | 	category	 | 	product	 | 	variant	 |
 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
 | 	1	 | 	P & A	 | 	Peripherals	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	Plus 1	 |
@@ -161,9 +161,9 @@ AtliQ's data engineers prepared various dimension tables and stored them in a My
   <summary><b>Fact Tables</b></summary>
 
 ### Fact Tables
-AtliQ's data engineers prepared various fact tables and stored them in a MySQL database schema. Sample records from each table are provided below.
+AtliQ's data engineers prepared various fact tables and stored them in a MySQL database schema called `gdb0041`. Sample records from each table are provided below.
 
-fact_forecast_monthly
+**gdb0041.fact_forecast_monthly**
 | 	date	 | 	fiscal_year	 | 	product_code	 | 	customer_code	 | 	forecast_quantity	 |
 | 	-:	 | 	-:	 | 	-:	 | 	-:	 | 	-:	 |
 | 	2018-09-01	 | 	2019	 | 	1	 | 	1	 | 	107	 |
@@ -183,7 +183,7 @@ Notes:
 * The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
 
 
-fact_sales_monthly
+**gdb0041.fact_sales_monthly**
 | 	date	 | 	fiscal_year	 | 	product_code	 | 	customer_code	 | 	sold_quantity	 |
 | 	-:	 | 	-:	 | 	-:	 | 	-:	 | 	-:	 |
 | 	2018-09-01	 | 	2019	 | 	1	 | 	1	 | 	70	 |
@@ -203,7 +203,7 @@ Notes:
 * The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
 
 
-fact_freight_cost
+**gdb0041.fact_freight_cost**
 | 	market	 | 	fiscal_year	 | 	freight_pct	 | 	other_cost_pct	 |
 | 	:-	 | 	-:	 | 	-:	 | 	-:	 |
 | 	Australia	 | 	2018	 | 	0.0188	 | 	0.005	 |
@@ -222,7 +222,7 @@ Notes:
 * The columns `market` and `fiscal_year` make up a **composite primary key**.
 
 
-fact_gross_price
+**gdb0041.fact_gross_price**
 | 	product_code	 | 	fiscal_year	 | 	gross_price	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	2018	 | 	19.363	 |
@@ -241,7 +241,7 @@ Notes:
 * The columns `product_code` and `fiscal_year` make up a **composite primary key**.
 
 
-fact_manufacturing_cost
+**gdb0041.fact_manufacturing_cost**
 | 	product_code	 | 	cost_year	 | 	manufacturing_cost	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	2018	 | 	5.9469	 |
@@ -262,7 +262,7 @@ Notes:
 
 
 
-fact_post_invoice_deductions
+**gdb0041.fact_post_invoice_deductions**
 | 	customer_code	 | 	product_code	 | 	date	 | 	discounts_pct	 | 	other_deductions_pct	 |
 | 	-:	 | 	-:	 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	1	 | 	2021-09-01	 | 	0.243105105	 | 	0.064459945	 |
@@ -279,7 +279,7 @@ Notes:
 * The columns `customer_code`, `product_code` and `date` make up a **composite primary key**.
 
 
-fact_pre_invoice_deductions
+**gdb0041.fact_pre_invoice_deductions**
 | 	customer_code	 | 	fiscal_year	 | 	pre_invoice_discount_pct	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | 	1	 | 	2018	 | 	0.082442198	 |
