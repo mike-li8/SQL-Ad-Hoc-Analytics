@@ -302,18 +302,45 @@ Notes:
 
 
 
+## Financial Analytics
+
+### Create a Function for Fiscal Year
+```
+CREATE DEFINER=`root`@`localhost` FUNCTION `get_fiscal_year`(
+	calendar_date DATE
+) RETURNS int
+    DETERMINISTIC
+BEGIN
+	DECLARE fiscal_year INT;
+    SET fiscal_year = YEAR(DATE_ADD(calendar_date, INTERVAL 4 MONTH));
+	RETURN fiscal_year;
+END
+```
 
 
-## Ad Hoc Request 7.5
+
+
+
+### Ad Hoc Request 7.5
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.5_Request.PNG?raw=true)
 
+SQL Query:
+```
+SELECT * FROM dim_customer
+WHERE customer LIKE "%croma%" AND market="india";
+```
 
 
-## Ad Hoc Request 7.7
+
+```
+```
+
+
+### Ad Hoc Request 7.7
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.7_Request.PNG?raw=true)
 
 
-## Ad Hoc Request 7.8
+### Ad Hoc Request 7.8
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.8_Request.PNG?raw=true)
 
 
