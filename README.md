@@ -324,16 +324,20 @@ END
 ### Ad Hoc Request 7.5
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.5_Request.PNG?raw=true)
 
-SQL Query:
+🔍 SQL Query:
 ```
 SELECT * FROM dim_customer
 WHERE customer LIKE "%croma%" AND market="india";
 ```
 
+🗂️ Query Output:
+| 	customer_code	 | 	customer	 | 	platform	 | 	channel	 | 	market	 | 	sub_zone	 | 	region	 |
+| 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
+| 	90002002	 | 	Croma	 | 	Brick & Mortar	 | 	Retailer	 | 	India	 | 	India	 | 	APAC	 |
 
 
-```
-```
+
+
 
 
 ### Ad Hoc Request 7.7
