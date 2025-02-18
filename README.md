@@ -304,5 +304,20 @@ Notes:
 
 
 
-## Ad Hoc Request 1
-![image alt]()
+## Ad Hoc Request 7.5
+![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.5_Request.PNG?raw=true)
+
+
+
+## Ad Hoc Request 7.7
+![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.7_Request.PNG?raw=true)
+
+
+## Ad Hoc Request 7.8
+![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.8_Request.PNG?raw=true)
+
+
+
+
+
+
