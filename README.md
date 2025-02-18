@@ -305,7 +305,7 @@ Notes:
 ## Financial Analytics
 
 ### 7.2
-![image alt]()
+![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.2_Request.PNG?raw=true)
 
 #### Create a SQL Function for Fiscal Year
 ```
@@ -319,6 +319,45 @@ BEGIN
 	RETURN fiscal_year;
 END
 ```
+
+#### Queries using Function:
+🔍 SQL Query:
+```
+SELECT * FROM dim_customer
+WHERE customer LIKE "%croma%" AND market="india";
+```
+
+🗂️ Query Output:
+| 	customer_code	 | 	customer	 | 	platform	 | 	channel	 | 	market	 | 	sub_zone	 | 	region	 |
+| 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
+| 	90002002	 | 	Croma	 | 	Brick & Mortar	 | 	Retailer	 | 	India	 | 	India	 | 	APAC	 |
+
+
+
+
+
+🔍 SQL Query:
+```
+SELECT
+    s.date, s.product_code, p.product,
+    p.variant, s.sold_quantity,
+    ROUND(g.gross_price,2) AS gross_price_per_item,
+    ROUND(g.gross_price * s.sold_quantity,2) AS gross_price_total
+FROM fact_sales_monthly s
+JOIN dim_product p ON p.product_code=s.product_code
+JOIN fact_gross_price g
+ON
+    s.product_code=g.product_code AND
+    get_fiscal_year(s.date)=g.fiscal_year
+WHERE
+    s.customer_code=90002002 AND
+    get_fiscal_year(s.date) = 2021
+ORDER BY date ASC;
+```
+
+🗂️ Query Output:
+
+
 
 
 
