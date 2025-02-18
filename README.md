@@ -304,11 +304,10 @@ Notes:
 
 ## Financial Analytics
 
+### 7.2
+![image alt]()
 
-<details>
-  <summary>Create a SQL <b>Function</b> for Fiscal Year</summary>
-
-### Create a SQL Function for Fiscal Year
+#### Create a SQL Function for Fiscal Year
 ```
 CREATE DEFINER=`root`@`localhost` FUNCTION `get_fiscal_year`(
 	calendar_date DATE
@@ -320,7 +319,7 @@ BEGIN
 	RETURN fiscal_year;
 END
 ```
-</details>
+
 
 
 
