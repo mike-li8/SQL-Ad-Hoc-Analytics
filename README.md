@@ -356,7 +356,7 @@ ORDER BY date ASC;
 ```
 
 🗂️ Query Output:
-[Output Exported as CSV](Query%Outputs/7.2_query_output.csv)
+[Output Exported as CSV](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/688058de9cd7e2a0e53be6906d384d79beaaed73/Query%20Outputs/7.2_query_output.csv)
 
 
 
