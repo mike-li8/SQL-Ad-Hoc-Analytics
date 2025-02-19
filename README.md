@@ -304,10 +304,11 @@ Notes:
 
 ## Financial Analytics
 
-### 7.2
-![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.2_Request.PNG?raw=true)
+<details>
+  <summary><b>Create a SQL Function for Fiscal Year</b></summary>
 
-#### Create a SQL Function for Fiscal Year
+
+### Create a SQL Function for Fiscal Year
 ```
 CREATE DEFINER=`root`@`localhost` FUNCTION `get_fiscal_year`(
 	calendar_date DATE
@@ -319,8 +320,15 @@ BEGIN
 	RETURN fiscal_year;
 END
 ```
+</details>
 
-#### Queries using Function:
+
+<details>
+  <summary><b>7.2</b></summary>
+
+### 7.2
+![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.2_Request.PNG?raw=true)
+
 🔍 SQL Query:
 ```
 SELECT * FROM dim_customer
@@ -331,9 +339,6 @@ WHERE customer LIKE "%croma%" AND market="india";
 | 	customer_code	 | 	customer	 | 	platform	 | 	channel	 | 	market	 | 	sub_zone	 | 	region	 |
 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
 | 	90002002	 | 	Croma	 | 	Brick & Mortar	 | 	Retailer	 | 	India	 | 	India	 | 	APAC	 |
-
-
-
 
 
 🔍 SQL Query:
@@ -355,13 +360,15 @@ WHERE
 ORDER BY date ASC;
 ```
 
+
 🗂️ Query Output:
 [Output Exported as CSV](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/688058de9cd7e2a0e53be6906d384d79beaaed73/Query%20Outputs/7.2_query_output.csv)
+</details>
 
 
 
-
-
+<details>
+  <summary><b>7.5</b></summary>
 
 ### Ad Hoc Request 7.5
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.5_Request.PNG?raw=true)
@@ -382,7 +389,7 @@ WHERE customer LIKE "%croma%" AND market="india";
 🔍 SQL Query:
 ```
 SELECT
-	s.date,
+    s.date,
     ROUND(SUM(g.gross_price * s.sold_quantity),2) AS gross_price_total
 FROM fact_sales_monthly s
 JOIN fact_gross_price g
@@ -396,13 +403,14 @@ ORDER BY s.date ASC;
 
 🗂️ Query Output:
 [Output Exported as CSV](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/688058de9cd7e2a0e53be6906d384d79beaaed73/Query%20Outputs/7.5_query_output.csv)
+</details>
 
 
 
 
 
-
-
+<details>
+  <summary><b>7.7</b></summary>
 
 ### Ad Hoc Request 7.7
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.7_Request.PNG?raw=true)
@@ -428,9 +436,12 @@ BEGIN
 	ORDER BY s.date ASC;
 END
 ```
+</details>
 
 
 
+<details>
+  <summary><b>7.8</b></summary>
 
 ### Ad Hoc Request 7.8
 ![image alt](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/main/Ad%20Hoc%20Requests%20on%20Kanban/7.8_Request.PNG?raw=true)
@@ -469,7 +480,4 @@ BEGIN
     END IF;
 END
 ```
-
-
-
-
+</details>
