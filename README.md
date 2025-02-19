@@ -356,7 +356,7 @@ ORDER BY date ASC;
 ```
 
 🗂️ Query Output:
-[Output Exported as CSV]()
+[Output Exported as CSV](Query Outputs/7.2_query_output.csv)
 
 
 
