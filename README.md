@@ -216,8 +216,9 @@ The following **fact tables** are in MySQL schema `gdb023`. Sample records from 
 | 2020-10-01 | A0118150102  | 70002018      | 284           | 2021        |
 
 Notes:
-* This table contains data on the sold quantity of a product for a specific customer, on a monthly level.
+* This table contains data on the sold quantity of products for specific customers, on a monthly level.
 * The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
+* Sales data is available for fiscal years 2020 and 2021
 
 
 
