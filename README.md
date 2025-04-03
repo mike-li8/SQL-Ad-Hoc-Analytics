@@ -321,9 +321,20 @@ ORDER BY
     market_name ASC
 ;
 ```
+</details>
 
 
+<details>
+  <summary><b>Question 2</b></summary>
 
+### Question 2
+What is the percentage increase in the number of unique products sold in 2021 compared to 2020?
+The final output contains these fields:
+* unique_products_2020
+* unique_products_2021
+* percentage_chg
+
+</details>
 
 
 
