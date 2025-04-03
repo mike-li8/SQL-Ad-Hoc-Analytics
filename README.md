@@ -361,7 +361,7 @@ WITH
     unique_2020 AS
     (
         SELECT
-            COUNT(s.product_code) AS unique_products_2020
+            COUNT(DISTINCT s.product_code) AS unique_products_2020
         FROM
             gdb023.fact_sales_monthly s
         WHERE
@@ -370,7 +370,7 @@ WITH
     unique_2021 AS
     (
         SELECT
-            COUNT(s.product_code) AS unique_products_2021
+            COUNT(DISTINCT s.product_code) AS unique_products_2021
         FROM
             gdb023.fact_sales_monthly s
         WHERE
