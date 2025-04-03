@@ -454,7 +454,7 @@ Which product segment had the greatest increase in the count of unique products 
 #### SQL Code:
 ```sql
 WITH
-    unique_sold_products_by_segment_fiscal_year AS
+    unique_products_sold_by_segment_fiscal_year AS
     (
         SELECT
             s.fiscal_year,
@@ -475,9 +475,9 @@ SELECT
     fy21.count_unique_products AS unique_products_2021,
     fy21.count_unique_products - fy20.count_unique_products AS difference
 FROM
-    unique_sold_products_by_segment_fiscal_year fy20
+    unique_products_sold_by_segment_fiscal_year fy20
 INNER JOIN
-    unique_sold_products_by_segment_fiscal_year fy21
+    unique_products_sold_by_segment_fiscal_year fy21
     ON fy20.segment = fy21.segment
 WHERE
     fy20.fiscal_year = 2020 AND
