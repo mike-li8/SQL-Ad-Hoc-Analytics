@@ -156,29 +156,30 @@ Notes:
 **dim_product**
 | 	product_code	 | 	division	 | 	segment	 | 	category	 | 	product	 | 	variant	 |
 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
-| A0118150101  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Standard      |
-| A0118150102  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Plus          |
-| A0118150103  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Premium       |
-| A0118150104  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Premium Plus  |
-| A2118150101  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Standard 1    |
-| A2118150102  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Standard 2    |
-| A2118150103  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Plus 1        |
-| A2118150104  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Plus 2        |
-| A2118150105  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Premium 1     |
-| A2118150106  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Premium 2     |
-| A4118110101  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Standard Grey |
-| A4118110102  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Standard Blue |
-| A4118110103  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Standard Red  |
-| A4118110104  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Plus Grey     |
-| A4118110105  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Plus Blue     |
-| A4118110106  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Plus Red      |
-| A4118110107  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Premium Black |
-| A6218160101  | N & S    | Storage     | External Solid State Drives  | AQ Digit SSD                                           | Standard      |
-| A6218160102  | N & S    | Storage     | External Solid State Drives  | AQ Digit SSD                                           | Plus          |
-| A6219160103  | N & S    | Storage     | External Solid State Drives  | AQ Digit SSD                                           | Premium       |
-| A7118160101  | N & S    | Networking  | Wi fi extender               | AQ Wi Power Dx1                                        | Standard      |
-| A7119160102  | N & S    | Networking  | Wi fi extender               | AQ Wi Power Dx1                                        | Plus          |
-| A7119160103  | N & S    | Networking  | Wi fi extender               | AQ Wi Power Dx1                                        | Premium       |
+| A7119160102    | N & S    | Networking | Wi fi extender         | AQ Wi Power Dx1  | Plus        |
+| A7119160103    | N & S    | Networking | Wi fi extender         | AQ Wi Power Dx1  | Premium     |
+| A7118160101    | N & S    | Networking | Wi fi extender         | AQ Wi Power Dx1  | Standard    |
+| A6419160302    | N & S    | Storage    | External Solid State Drives | AQ Clx1      | Plus        |
+| A6419160303    | N & S    | Storage    | External Solid State Drives | AQ Clx1      | Premium     |
+| A6419160301    | N & S    | Storage    | External Solid State Drives | AQ Clx1      | Standard    |
+| A3119150303    | P & A    | Accessories| Keyboard               | AQ Gamers        | Plus 1      |
+| A3120150304    | P & A    | Accessories| Keyboard               | AQ Gamers        | Plus 2      |
+| A3120150305    | P & A    | Accessories| Keyboard               | AQ Gamers        | Premium 1   |
+| A3120150306    | P & A    | Accessories| Keyboard               | AQ Gamers        | Premium 2   |
+| A3119150301    | P & A    | Accessories| Keyboard               | AQ Gamers        | Standard 1  |
+| A3119150302    | P & A    | Accessories| Keyboard               | AQ Gamers        | Standard 2  |
+| A0721150402    | P & A    | Peripherals| Graphic Card           | AQ GT 21         | Plus 1      |
+| A0721150403    | P & A    | Peripherals| Graphic Card           | AQ GT 21         | Plus 2      |
+| A0721150404    | P & A    | Peripherals| Graphic Card           | AQ GT 21         | Premium     |
+| A0721150401    | P & A    | Peripherals| Graphic Card           | AQ GT 21         | Standard    |
+| A4118110105    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Plus Blue   |
+| A4118110104    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Plus Grey   |
+| A4118110106    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Plus Red    |
+| A4118110107    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Premium Black|
+| A4118110102    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Standard Blue|
+| A4118110101    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Standard Grey|
+| A4118110103    | PC       | Notebook   | Personal Laptop        | AQ Aspiron       | Standard Red|
+
 
 
 Notes:
