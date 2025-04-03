@@ -339,37 +339,37 @@ The final output contains these fields:
 
 ```sql
 WITH
-	unique_2020 AS
+    unique_2020 AS
     (
-	SELECT
-		COUNT(DISTINCT s.product_code) AS unique_products_2020
-	FROM
-		gdb023.fact_sales_monthly s
-	WHERE
-		s.fiscal_year = 2020
+        SELECT
+            COUNT(DISTINCT s.product_code) AS unique_products_2020
+        FROM
+            gdb023.fact_sales_monthly s
+        WHERE
+            s.fiscal_year = 2020
     ),
     unique_2021 AS
     (
-	SELECT
-		COUNT(DISTINCT s.product_code) AS unique_products_2021
-	FROM
-		gdb023.fact_sales_monthly s
-	WHERE
-		s.fiscal_year = 2021
-	)
+        SELECT
+            COUNT(DISTINCT s.product_code) AS unique_products_2021
+        FROM
+            gdb023.fact_sales_monthly s
+        WHERE
+            s.fiscal_year = 2021
+    )
 SELECT
-	u20.unique_products_2020,
-	u21.unique_products_2021,
-	ROUND(
-		(u21.unique_products_2021 - u20.unique_products_2020)
+    u20.unique_products_2020,
+    u21.unique_products_2021,
+    ROUND(
+        (u21.unique_products_2021 - u20.unique_products_2020)
         / u20.unique_products_2020
         * 100,
         2
-	) AS percentage_chg
+    ) AS percentage_chg
 FROM
-	unique_2020 u20
+    unique_2020 u20
 CROSS JOIN
-	unique_2021 u21
+    unique_2021 u21
 ;
 ```
 
