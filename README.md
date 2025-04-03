@@ -147,7 +147,7 @@ The following **dimension tables** are in MySQL schema `gdb023`. Sample records 
 | 90022080     | Staples         | Brick & Mortar | Retailer | USA      | NA      | NA     |
 | 90023029     | Staples         | Brick & Mortar | Retailer | Canada   | NA      | NA     |
 | 80001019	   | Neptune	       | Brick & Mortar | Distributor	| China |	ROA |	APAC |
-|80006154	     | Synthetic	     | Brick & Mortar	| Distributor	| Philiphines |	ROA |	APAC |
+| 80006154	   | Synthetic	     | Brick & Mortar	| Distributor	| Philiphines |	ROA |	APAC |
  
 Notes:
 * `customer_code` is a primary key field. 
@@ -156,16 +156,30 @@ Notes:
 **dim_product**
 | 	product_code	 | 	division	 | 	segment	 | 	category	 | 	product	 | 	variant	 |
 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
-| 	1	 | 	P & A	 | 	Peripherals	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	Plus 1	 |
-| 	2	 | 	P & A	 | 	Peripherals	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	Plus 2	 |
-| 	3	 | 	P & A	 | 	Accessories	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	Premium 1	 |
-| 	4	 | 	P & A	 | 	Accessories	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	Premium 2	 |
-| 	5	 | 	PC	 | 	Notebook	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	Standard Blue	 |
-| 	6	 | 	PC	 | 	Notebook	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	Standard Red	 |
-| 	7	 | 	N & S	 | 	Networking	 | 	Wi fi extender	 | 	AQ Wi Power Dx1	 | 	Standard	 |
-| 	8  | 	N & S	 | 	Networking	 | 	Wi fi extender	 | 	AQ Wi Power Dx2	 | 	Standard	 |
-| 	9	 | 	N & S	 | 	Storage	 | 	External Solid State Drives	 | 	AQ Digit SSD	 | 	Premium	 |
-|  10 | 	N & S	 | 	Storage	 | 	External&nbsp;Solid&nbsp;State&nbsp;Drives	 | 	AQ Neuer SSD	 | 	Premium	 |
+| A0118150101  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Standard      |
+| A0118150102  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Plus          |
+| A0118150103  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Premium       |
+| A0118150104  | P & A    | Peripherals | Internal HDD                 | AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache | Premium Plus  |
+| A2118150101  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Standard 1    |
+| A2118150102  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Standard 2    |
+| A2118150103  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Plus 1        |
+| A2118150104  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Plus 2        |
+| A2118150105  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Premium 1     |
+| A2118150106  | P & A    | Accessories | Mouse                        | AQ Master wired x1 Ms                                   | Premium 2     |
+| A4118110101  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Standard Grey |
+| A4118110102  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Standard Blue |
+| A4118110103  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Standard Red  |
+| A4118110104  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Plus Grey     |
+| A4118110105  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Plus Blue     |
+| A4118110106  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Plus Red      |
+| A4118110107  | PC       | Notebook    | Personal Laptop              | AQ Aspiron                                              | Premium Black |
+| A6218160101  | N & S    | Storage     | External Solid State Drives  | AQ Digit SSD                                           | Standard      |
+| A6218160102  | N & S    | Storage     | External Solid State Drives  | AQ Digit SSD                                           | Plus          |
+| A6219160103  | N & S    | Storage     | External Solid State Drives  | AQ Digit SSD                                           | Premium       |
+| A7118160101  | N & S    | Networking  | Wi fi extender               | AQ Wi Power Dx1                                        | Standard      |
+| A7119160102  | N & S    | Networking  | Wi fi extender               | AQ Wi Power Dx1                                        | Plus          |
+| A7119160103  | N & S    | Networking  | Wi fi extender               | AQ Wi Power Dx1                                        | Premium       |
+
 
 Notes:
 * `product_code` is a primary key field.
@@ -206,7 +220,7 @@ Notes:
 
 
 
-fact_gross_price
+**fact_gross_price**
 | product_code | fiscal_year | gross_price |
 |--------------|-------------|-------------|
 | A0118150101  | 2020        | 16.2323     |
@@ -221,7 +235,7 @@ Notes:
 * The columns `product_code` and `fiscal_year` make up a **composite primary key**.
 
 
-fact_manufacturing_cost
+**fact_manufacturing_cost**
 | product_code | cost_year | manufacturing_cost |
 |--------------|-----------|--------------------|
 | A0118150101  | 2020      | 5.0207             |
@@ -237,7 +251,8 @@ Notes:
 
 
 
-fact_pre_invoice_deductions
+
+**fact_pre_invoice_deductions**
 | 	customer_code	 | 	fiscal_year	 | 	pre_invoice_discount_pct	 |
 | 	-:	 | 	-:	 | 	-:	 |
 | customer_code | fiscal_year | pre_invoice_discount_pct |
