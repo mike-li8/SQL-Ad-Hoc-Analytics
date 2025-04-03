@@ -414,14 +414,14 @@ The final output should be sorted in descending order of product count.
 #### SQL Code:
 ```sql
 SELECT
-	p.segment,
-	COUNT(p.product_code) AS product_count
-FROM 
-	gdb023.dim_product p
+    p.segment,
+    COUNT(p.product_code) AS product_count
+FROM
+    gdb023.dim_product p
 GROUP BY
-	p.segment
+    p.segment
 ORDER BY
-	product_count DESC
+    product_count DESC
 ;
 ```
 
