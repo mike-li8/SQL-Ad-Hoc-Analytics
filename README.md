@@ -97,3 +97,152 @@ AtliQ's fiscal year begins in September and ends in August the following year. T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Data Sources
+
+
+
+<details>
+  <summary><b>Dimension Tables</b></summary>
+
+### Dimension Tables
+AtliQ's data engineers prepared various dimension tables and stored them in a MySQL database schema. Sample records from each table are provided below. For readability, primary key values for some tables have been converted to natural numbers.
+
+**dim_customer**
+| 	customer_code	 | 	customer	 | 	market	 | 	platform	 | 	channel	 |
+| 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
+| 	1	 | 	Amazon	 | 	USA	 | 	E-Commerce	 | 	Retailer	 |
+| 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 |
+| 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 |
+| 	4	 | 	Staples	 | 	Canada	 | 	Brick & Mortar	 | 	Retailer	 |
+| 	5	 | 	AltiQ Exclusive	 | 	South Korea	 | 	Brick & Mortar	 | 	Direct	 |
+| 	6	 | 	Atliq e Store	 | 	Newzealand	 | 	E-Commerce	 | 	Direct	 |
+| 	7	 | 	Neptune	 | 	China	 | 	Brick & Mortar	 | 	Distributor	 |
+
+`customer_code` is a primary key field. 
+
+**dim_product**
+| 	product_code	 | 	division	 | 	segment	 | 	category	 | 	product	 | 	variant	 |
+| 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 |
+| 	1	 | 	P & A	 | 	Peripherals	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	Plus 1	 |
+| 	2	 | 	P & A	 | 	Peripherals	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	Plus 2	 |
+| 	3	 | 	P & A	 | 	Accessories	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	Premium 1	 |
+| 	4	 | 	P & A	 | 	Accessories	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	Premium 2	 |
+| 	5	 | 	PC	 | 	Notebook	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	Standard Blue	 |
+| 	6	 | 	PC	 | 	Notebook	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	Standard Red	 |
+| 	7	 | 	N & S	 | 	Networking	 | 	Wi fi extender	 | 	AQ Wi Power Dx1	 | 	Standard	 |
+| 	8  | 	N & S	 | 	Networking	 | 	Wi fi extender	 | 	AQ Wi Power Dx2	 | 	Standard	 |
+| 	9	 | 	N & S	 | 	Storage	 | 	External Solid State Drives	 | 	AQ Digit SSD	 | 	Premium	 |
+|  10 | 	N & S	 | 	Storage	 | 	External&nbsp;Solid&nbsp;State&nbsp;Drives	 | 	AQ Neuer SSD	 | 	Premium	 |
+
+`product_code` is a primary key field.
+</details>
+
+
+
+<details>
+  <summary><b>Fact Tables</b></summary>
+
+### Fact Tables
+AtliQ's data engineers prepared various fact tables and stored them in a MySQL database schema. Sample records from each table are provided below.
+
+
+
+fact_sales_monthly
+| 	date	 | 	product_code	 | 	division	 | 	category	 | 	product	 | 	customer_code	 | 	customer_name	 | 	market	 | 	platform	 | 	channel	 | 	sold_quantity	 |
+| 	-:	 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	-:	 | 	:-	 | 	:-	 | 	:-	 | 	:-	 | 	-:	 |
+| 	2018-09-01	 | 	1	 | 	P & A	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	1	 | 	Amazon	 | 	USA	 | 	E-Commerce	 | 	Retailer	 | 	70	 |
+| 	2018-09-01	 | 	2	 | 	P & A	 | 	Graphic Card	 | 	AQ Mforce Gen Y	 | 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 | 	152	 |
+| 	2018-10-01	 | 	3	 | 	P & A	 | 	Mouse	 | 	AQ Master wired x1 Ms	 | 	4	 | 	Staples	 | 	Canada	 | 	Brick&nbsp;&&nbsp;Mortar	 | 	Retailer	 | 	129	 |
+| 	2018-10-01	 | 	4	 | 	P & A	 | 	Mouse	 | 	AQ&nbsp;Master&nbsp;wired&nbsp;x1&nbsp;Ms	 | 	4	 | 	Staples	 | 	Canada	 | 	Brick & Mortar	 | 	Retailer	 | 	60	 |
+| 	2018-11-01	 | 	5	 | 	PC	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	5	 | 	AltiQ Exclusive	 | 	South Korea	 | 	Brick & Mortar	 | 	Direct	 | 	164	 |
+| 	2018-11-01	 | 	6	 | 	PC	 | 	Business Laptop	 | 	AQ BZ Compact	 | 	2	 | 	Amazon	 | 	Japan	 | 	E-Commerce	 | 	Retailer	 | 	158	 |
+| 	2018-12-01	 | 	7	 | 	N & S	 | 	Wi fi extender	 | 	AQ Wi Power Dx1	 | 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 | 	163	 |
+| 	2018-12-01	 | 	8	 | 	N & S	 | 	Wi fi extender	 | 	AQ Wi Power Dx2	 | 	6	 | 	Atliq e Store	 | 	Newzealand	 | 	E-Commerce	 | 	Direct	 | 	66	 |
+| 	2019-01-01	 | 	9	 | 	N & S	 | 	External Solid State Drives	 | 	AQ Digit SSD	 | 	7	 | 	Neptune	 | 	China	 | 	Brick & Mortar	 | 	Distributor	 | 	140	 |
+| 	2019-01-01	 | 	10	 | 	N & S	 | 	External&nbsp;Solid&nbsp;State&nbsp;Drives	 | 	AQ Neuer SSD	 | 	3	 | 	Staples	 | 	USA	 | 	Brick & Mortar	 | 	Retailer	 | 	61	 |
+
+Notes:
+* This table contains data on the actual sold quantity of a product for a specific customer, on a monthly level.
+* The data engineer provided this table in **denormalized** format.
+* The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
+
+
+
+gross_price
+| 	product_code	 | 	fiscal_year	 | 	gross_price	 |
+| 	-:	 | 	-:	 | 	-:	 |
+| 	1	 | 	2018	 | 	19.363	 |
+| 	1	 | 	2019	 | 	19.3442	 |
+| 	1	 | 	2020	 | 	22.1317	 |
+| 	1	 | 	2021	 | 	21.7795	 |
+| 	1	 | 	2022	 | 	23.992	 |
+| 	2	 | 	2018	 | 	19.5743	 |
+| 	2	 | 	2019	 | 	18.5072	 |
+| 	2	 | 	2020	 | 	20.7734	 |
+| 	2	 | 	2021	 | 	22.9729	 |
+| 	2	 | 	2022	 | 	23.6298	 |
+
+Notes:
+* Gross price is the base price of a product. This table contains data on the gross price of each specific product on a fiscal year level. 
+* The columns `product_code` and `fiscal_year` make up a **composite primary key**.
+
+
+manufacturing_cost
+| 	product_code	 | 	cost_year	 | 	manufacturing_cost	 |
+| 	-:	 | 	-:	 | 	-:	 |
+| 	1	 | 	2018	 | 	5.9469	 |
+| 	1	 | 	2019	 | 	5.5306	 |
+| 	1	 | 	2020	 | 	6.3264	 |
+| 	1	 | 	2021	 | 	6.59	 |
+| 	1	 | 	2022	 | 	7.1831	 |
+| 	2	 | 	2018	 | 	5.8958	 |
+| 	2	 | 	2019	 | 	5.4242	 |
+| 	2	 | 	2020	 | 	6.4789	 |
+| 	2	 | 	2021	 | 	6.8199	 |
+| 	2	 | 	2022	 | 	7.3655	 |
+
+
+Notes:
+* Manufacturing cost is one component of COGS. This table contains data at a fiscal year level on manufacturing cost ($) for one unit quantity of each specific product.
+* The columns `product_code` and `cost_year` make up a **composite primary key**.
+
+
+
+
+fact_pre_invoice_deductions
+| 	customer_code	 | 	fiscal_year	 | 	pre_invoice_discount_pct	 |
+| 	-:	 | 	-:	 | 	-:	 |
+| 	1	 | 	2018	 | 	0.082442198	 |
+| 	1	 | 	2019	 | 	0.077658613	 |
+| 	1	 | 	2020	 | 	0.073457811	 |
+| 	1	 | 	2021	 | 	0.070269476	 |
+| 	1	 | 	2022	 | 	0.10567783	 |
+| 	2	 | 	2018	 | 	0.295567708	 |
+| 	2	 | 	2019	 | 	0.257654803	 |
+| 	2	 | 	2020	 | 	0.225480979	 |
+| 	2	 | 	2021	 | 	0.206107124	 |
+| 	2	 | 	2022	 | 	0.29309271	 |
+
+Notes:
+* This table contains data on pre invoice deductions (as a percentage of gross price) for each specific customer, on a fiscal year level.
+* The columns `customer_code`, and `fiscal_year` make up a **composite primary key**.
+</details>
