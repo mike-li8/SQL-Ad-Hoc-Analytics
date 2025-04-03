@@ -350,7 +350,7 @@ ORDER BY
 
 #### Question:
 What is the percentage increase in the number of unique products sold in 2021 compared to 2020?
-The final output contains these fields:
+The final output should contain these fields:
 * unique_products_2020
 * unique_products_2021
 * percentage_chg
@@ -361,7 +361,7 @@ WITH
     unique_2020 AS
     (
         SELECT
-            COUNT(DISTINCT s.product_code) AS unique_products_2020
+            COUNT(s.product_code) AS unique_products_2020
         FROM
             gdb023.fact_sales_monthly s
         WHERE
@@ -370,7 +370,7 @@ WITH
     unique_2021 AS
     (
         SELECT
-            COUNT(DISTINCT s.product_code) AS unique_products_2021
+            COUNT(s.product_code) AS unique_products_2021
         FROM
             gdb023.fact_sales_monthly s
         WHERE
@@ -397,20 +397,45 @@ CROSS JOIN
 |----------------------|----------------------|----------------|
 | 245                  | 334                  | 36.33          |
 
-
 </details>
 
 
 
 
+<details>
+  <summary><b>Question 3</b></summary>
 
+### Question 3
+Provide the count of unique products for each product segment. The final output should contain these fields:
+* segment
+* product_count
+The final output should be sorted in descending order of product count.
 
+#### SQL Code:
+```sql
+SELECT
+	p.segment,
+	COUNT(p.product_code) AS product_count
+FROM 
+	gdb023.dim_product p
+GROUP BY
+	p.segment
+ORDER BY
+	product_count DESC
+;
+```
 
+#### SQL Output:
+| segment     | product_count |
+|-------------|---------------|
+| Notebook    | 129           |
+| Accessories | 116           |
+| Peripherals | 84            |
+| Desktop     | 32            |
+| Storage     | 27            |
+| Networking  | 9             |
 
-
-
-
-
+</details>
 
 
 
