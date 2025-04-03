@@ -441,6 +441,16 @@ ORDER BY
 
 
 
+<details>
+  <summary><b>Question 4</b></summary>
 
+### Question 4
+Which product segment had the greatest increase in the count of unique products sold in 2021 compared to 2020? The final output should contain these fields:
+* segment
+* unique_products_2020
+* unique_products_2021
+* difference
 
-
+#### SQL Code:
+```sql
+```
