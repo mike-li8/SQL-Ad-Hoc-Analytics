@@ -302,12 +302,25 @@ Notes:
 
 
 
+## Ad-hoc Questions/Requests and SQL Queries
 
+<details>
+  <summary><b>Question 1</b></summary>
 
-
-
-
-
+### Question 1
+List all the markets where the customer 'Atliq Exclusive' operates in the APAC region.
+```sql
+SELECT
+    DISTINCT c.market AS market_name
+FROM
+    gdb023.dim_customer c
+WHERE
+    c.customer = 'Atliq Exclusive' AND
+    c.region = 'APAC'
+ORDER BY
+    market_name ASC
+;
+```
 
 
 
