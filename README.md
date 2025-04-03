@@ -122,7 +122,7 @@ AtliQ's fiscal year begins in September and ends in August the following year. T
   <summary><b>Dimension Tables</b></summary>
 
 ### Dimension Tables
-The following **dimension tables** are in MySQL schema `gdb023`. Sample records from each table are provided below. For readability, primary key values have been converted to natural numbers.
+The following **dimension tables** are in MySQL schema `gdb023`. Sample records from each table are provided below.
 
 **dim_customer**
 | customer_code | customer         | platform     | channel   | market       | sub_zone | region |
