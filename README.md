@@ -125,15 +125,28 @@ AtliQ's fiscal year begins in September and ends in August the following year. T
 The following **dimension tables** are in MySQL schema `gdb023`. Sample records from each table are provided below. For readability, primary key values have been converted to natural numbers.
 
 **dim_customer**
-| customer_code | customer        | platform       | channel      | market       | sub_zone | region |
+| customer_code | customer         | platform     | channel   | market       | sub_zone | region |
 |-------------:|:---------------|:--------------|:------------|:------------|:---------|:-------|
-| 1           | Amazon         | E-Commerce    | Retailer    | USA         | NA      | NA    |
-| 2           | Amazon         | E-Commerce    | Retailer    | Japan       | ROA     | APAC  |
-| 3           | Staples        | Brick & Mortar | Retailer    | USA         | NA      | NA    |
-| 4           | Staples        | Brick & Mortar | Retailer    | Canada      | NA      | NA    |
-| 5           | Atliq Exclusive | Brick & Mortar | Direct      | South Korea | ROA     | APAC  |
-| 6           | Atliq e Store   | E-Commerce    | Direct      | New Zealand | ANZ     | APAC  |
-| 7           | Neptune        | Brick & Mortar | Distributor | China       | ROA     | APAC  |
+|--------------|-----------------|-------------|----------|------------|---------|--------|
+| 90004067     | Amazon          | E-Commerce  | Retailer | Japan      | ROA     | APAC   |
+| 90004068     | Amazon          | E-Commerce  | Retailer | Japan      | ROA     | APAC   |
+| 90007197     | Amazon          | E-Commerce  | Retailer | South Korea | ROA     | APAC   |
+| 90022081     | Amazon          | E-Commerce  | Retailer | USA        | NA      | NA     |
+| 90022082     | Amazon          | E-Commerce  | Retailer | USA        | NA      | NA     |
+| 90023023     | Amazon          | E-Commerce  | Retailer | Canada     | NA      | NA     |
+| 90023030     | Amazon          | E-Commerce  | Retailer | Canada     | NA      | NA     |
+| 70004070     | Atliq e Store   | E-Commerce  | Direct   | Japan      | ROA     | APAC   |
+| 70007199     | Atliq e Store   | E-Commerce  | Direct   | South Korea | ROA     | APAC   |
+| 70022085     | Atliq e Store   | E-Commerce  | Direct   | USA        | NA      | NA     |
+| 70023032     | Atliq e Store   | E-Commerce  | Direct   | Canada     | NA      | NA     |
+| 70004069     | Atliq Exclusive | Brick & Mortar | Direct | Japan      | ROA     | APAC   |
+| 70007198     | Atliq Exclusive | Brick & Mortar | Direct | South Korea | ROA     | APAC   |
+| 70022084     | Atliq Exclusive | Brick & Mortar | Direct | USA        | NA      | NA     |
+| 70023031     | Atliq Exclusive | Brick & Mortar | Direct | Canada     | NA      | NA     |
+| 90022078     | Costco          | Brick & Mortar | Retailer | USA      | NA      | NA     |
+| 90023027     | Costco          | Brick & Mortar | Retailer | Canada   | NA      | NA     |
+| 90022080     | Staples         | Brick & Mortar | Retailer | USA      | NA      | NA     |
+| 90023029     | Staples         | Brick & Mortar | Retailer | Canada   | NA      | NA     |
 
 Notes:
 * `customer_code` is a primary key field. 
