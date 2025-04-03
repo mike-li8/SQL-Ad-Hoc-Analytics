@@ -127,7 +127,6 @@ The following **dimension tables** are in MySQL schema `gdb023`. Sample records 
 **dim_customer**
 | customer_code | customer         | platform     | channel   | market       | sub_zone | region |
 |-------------:|:---------------|:--------------|:------------|:------------|:---------|:-------|
-|--------------|-----------------|-------------|----------|------------|---------|--------|
 | 90004067     | Amazon          | E-Commerce  | Retailer | Japan      | ROA     | APAC   |
 | 90004068     | Amazon          | E-Commerce  | Retailer | Japan      | ROA     | APAC   |
 | 90007197     | Amazon          | E-Commerce  | Retailer | South Korea | ROA     | APAC   |
@@ -147,7 +146,9 @@ The following **dimension tables** are in MySQL schema `gdb023`. Sample records 
 | 90023027     | Costco          | Brick & Mortar | Retailer | Canada   | NA      | NA     |
 | 90022080     | Staples         | Brick & Mortar | Retailer | USA      | NA      | NA     |
 | 90023029     | Staples         | Brick & Mortar | Retailer | Canada   | NA      | NA     |
-
+| 80001019	   | Neptune	       | Brick & Mortar | Distributor	| China |	ROA |	APAC |
+|80006154	     | Synthetic	     | Brick & Mortar	| Distributor	| Philiphines |	ROA |	APAC |
+ 
 Notes:
 * `customer_code` is a primary key field. 
 
