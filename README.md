@@ -308,7 +308,10 @@ Notes:
   <summary><b>Question 1</b></summary>
 
 ### Question 1
+#### Question:
 List all the markets where the customer 'Atliq Exclusive' operates in the APAC region.
+
+#### SQL Code:
 ```sql
 SELECT
     DISTINCT c.market AS market_name
@@ -321,6 +324,19 @@ ORDER BY
     market_name ASC
 ;
 ```
+
+#### SQL Output:
+| market_name  |
+|--------------|
+| Australia    |
+| Bangladesh   |
+| India        |
+| Indonesia    |
+| Japan        |
+| Newzealand   |
+| Philippines  |
+| South Korea  |
+
 </details>
 
 
@@ -331,12 +347,15 @@ ORDER BY
   <summary><b>Question 2</b></summary>
 
 ### Question 2
+
+#### Question:
 What is the percentage increase in the number of unique products sold in 2021 compared to 2020?
 The final output contains these fields:
 * unique_products_2020
 * unique_products_2021
 * percentage_chg
 
+#### SQL Code:
 ```sql
 WITH
     unique_2020 AS
@@ -372,6 +391,12 @@ CROSS JOIN
     unique_2021 u21
 ;
 ```
+
+#### SQL Output:
+| unique_products_2020 | unique_products_2021 | percentage_chg |
+|----------------------|----------------------|----------------|
+| 245                  | 334                  | 36.33          |
+
 
 </details>
 
