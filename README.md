@@ -216,8 +216,8 @@ The following **fact tables** are in MySQL schema `gdb023`. Sample records from 
 | 2020-10-01 | A0118150102  | 70002018      | 284           | 2021        |
 
 Notes:
-* This table contains data on the sold quantity of products for specific customers, on a monthly level.
-* The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**.
+* This table contains data on the sold quantity of products for specific customers, on a monthly level
+* The columns `date`, `product_code`, and `customer_code` make up a **composite primary key**
 * Sales data is available for fiscal years 2020 and 2021
 
 
@@ -233,8 +233,10 @@ Notes:
 | A0118150103  | 2021        | 21.7795     |
 
 Notes:
-* Gross price is the base price of a product. This table contains data on the gross price of each specific product on a fiscal year level. 
-* The columns `product_code` and `fiscal_year` make up a **composite primary key**.
+* Gross price is the base price of a product
+* This table contains data on the gross price of each specific product on a fiscal year level
+* The columns `product_code` and `fiscal_year` make up a **composite primary key**
+* Gross price data is available for fiscal years 2020 and 2021
 
 
 **fact_manufacturing_cost**
@@ -248,8 +250,10 @@ Notes:
 | A0118150103  | 2021      | 6.5900             |
 
 Notes:
-* Manufacturing cost is one component of COGS. This table contains data at a fiscal year level on manufacturing cost ($) for one unit quantity of each specific product.
-* The columns `product_code` and `cost_year` make up a **composite primary key**.
+* Manufacturing cost is one component of COGS
+* This table contains data on the manufacturing cost ($) for one unit quantity of each specific product on a fiscal year level
+* The columns `product_code` and `cost_year` make up a **composite primary key**
+* Manufacturing cost ($) data is available for fiscal years 2020 and 2021
 
 
 
@@ -257,8 +261,6 @@ Notes:
 **fact_pre_invoice_deductions**
 | 	customer_code	 | 	fiscal_year	 | 	pre_invoice_discount_pct	 |
 | 	-:	 | 	-:	 | 	-:	 |
-| customer_code | fiscal_year | pre_invoice_discount_pct |
-|---------------|-------------|--------------------------|
 | 70002017      | 2020        | 0.0735                   |
 | 70002017      | 2021        | 0.0703                   |
 | 70002018      | 2020        | 0.2255                   |
@@ -267,6 +269,8 @@ Notes:
 | 70003181      | 2021        | 0.0974                   |
 
 Notes:
-* This table contains data on pre invoice deductions (as a percentage of gross price) for each specific customer, on a fiscal year level.
-* The columns `customer_code`, and `fiscal_year` make up a **composite primary key**.
+* This table contains data on pre-invoice deductions (as a percentage of gross sales) for each specific customer, on a fiscal year level
+* The columns `customer_code`, and `fiscal_year` make up a **composite primary key**
+* Pre-invoice deductions data is available for fiscal years 2020 and 2021
+
 </details>
