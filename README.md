@@ -671,3 +671,21 @@ ORDER BY
 | 2021-08-01  | 2021        | 7178707.59         |
 
 </details>
+
+
+
+
+
+
+
+
+<details>
+  <summary><b>Question 8</b></summary>
+
+### Question 8
+Which fiscal quarter of fiscal year 2020 had the highest total quantity of products sold? Generate a report showing total quantity of products sold per fiscal quarter for fiscal year 2020. The final output should include the following fields:
+* `quarter`
+* `total_sold_quantity`
+
+Sort the results in descending order of `total_sold_quantity`
+
