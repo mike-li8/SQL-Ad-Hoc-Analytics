@@ -553,7 +553,6 @@ ORDER BY
 
 ### Question 6
 Generate a report of the top 5 customers in the Indian market with the highest average pre-invoice discount percentage for the 2021 fiscal year. The final output should include the following fields:
-* customer_code
 * customer
 * average_pre_invoice_discount_pct
 
