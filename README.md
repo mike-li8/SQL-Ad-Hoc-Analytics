@@ -602,3 +602,72 @@ ORDER BY
 
 
 
+
+
+
+<details>
+  <summary><b>Question 7</b></summary>
+
+### Question 7
+Generate a report of monthly gross sales amount for the customer 'Atliq Exclusive' from fiscal years 2020 to 2021. The final output should include the following fields:
+* month
+* fiscal_year
+* gross_sales_amount
+
+
+### SQL Code
+```sql
+SELECT
+    s.date AS month,
+    s.fiscal_year,
+    ROUND(SUM(s.sold_quantity * p.gross_price), 2) AS gross_sales_amount
+FROM
+    fact_sales_monthly s
+INNER JOIN
+    dim_customer c
+    ON s.customer_code = c.customer_code
+INNER JOIN
+    fact_gross_price p
+    ON s.product_code = p.product_code
+    AND s.fiscal_year = p.fiscal_year
+WHERE
+    c.customer = "Atliq Exclusive"
+GROUP BY
+    s.date,
+    s.fiscal_year
+ORDER BY
+    month ASC
+;
+```
+
+
+
+### SQL Output
+| month       | fiscal_year | gross_sales_amount |
+|-------------|-------------|--------------------|
+| 2019-09-01  | 2020        | 4496259.67         |
+| 2019-10-01  | 2020        | 5135902.35         |
+| 2019-11-01  | 2020        | 7522892.56         |
+| 2019-12-01  | 2020        | 4830404.73         |
+| 2020-01-01  | 2020        | 4740600.16         |
+| 2020-02-01  | 2020        | 3996227.77         |
+| 2020-03-01  | 2020        | 378770.97          |
+| 2020-04-01  | 2020        | 395035.35          |
+| 2020-05-01  | 2020        | 783813.42          |
+| 2020-06-01  | 2020        | 1695216.60         |
+| 2020-07-01  | 2020        | 2551159.16         |
+| 2020-08-01  | 2020        | 2786648.26         |
+| 2020-09-01  | 2021        | 12353509.79        |
+| 2020-10-01  | 2021        | 13218636.20        |
+| 2020-11-01  | 2021        | 20464999.10        |
+| 2020-12-01  | 2021        | 12944659.65        |
+| 2021-01-01  | 2021        | 12399392.98        |
+| 2021-02-01  | 2021        | 10129735.57        |
+| 2021-03-01  | 2021        | 12144061.25        |
+| 2021-04-01  | 2021        | 7311999.95         |
+| 2021-05-01  | 2021        | 12150225.01        |
+| 2021-06-01  | 2021        | 9824521.01         |
+| 2021-07-01  | 2021        | 12092346.32        |
+| 2021-08-01  | 2021        | 7178707.59         |
+
+</details>
