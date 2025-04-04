@@ -485,3 +485,20 @@ ORDER BY
     difference DESC
 ;
 ```
+
+
+#### SQL Output:
+| Segment     | Unique Products 2020 | Unique Products 2021 | Difference |
+|-------------|----------------------|----------------------|------------|
+| Accessories | 69                   | 103                  | 34         |
+| Notebook    | 92                   | 108                  | 16         |
+| Peripherals | 59                   | 75                   | 16         |
+| Desktop     | 7                    | 22                   | 15         |
+| Storage     | 12                   | 17                   | 5          |
+| Networking  | 6                    | 9                    | 3          |
+
+</details>
+
+
+
+
