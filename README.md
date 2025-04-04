@@ -740,3 +740,45 @@ Which of the three customer channels (Direct, Retailer, Distributor) contributed
 * channel
 * gross_sales_mln
 * percentage
+
+### SQL Code
+```sql
+WITH
+    gross_sales_2021_by_channel AS
+    (
+        SELECT
+            c.channel,
+            SUM(s.sold_quantity * gp.gross_price) AS gross_sales
+        FROM
+            fact_sales_monthly s
+        INNER JOIN
+            fact_gross_price gp
+            ON s.product_code = gp.product_code
+            AND s.fiscal_year = gp.fiscal_year
+        INNER JOIN
+            dim_customer c
+		        ON s.customer_code = c.customer_code
+        WHERE
+            s.fiscal_year = 2021
+        GROUP BY
+            c.channel
+    )
+SELECT
+    channel,
+    ROUND(gs.gross_sales / 1000000, 2) AS gross_sales_mln,
+    gs.gross_sales / (SELECT SUM(gross_sales) FROM gross_sales_2021_by_channel) AS percentage
+FROM
+    gross_sales_2021_by_channel gs
+ORDER BY
+    gross_sales_mln DESC
+;
+```
+
+### SQL Output
+| channel     | gross_sales_mln | percentage  |
+|-------------|------------------|-------------|
+| Retailer    | 1219.08          | 0.73233983  |
+| Direct      | 257.53           | 0.15470739  |
+| Distributor | 188.03           | 0.11295278  |
+
+</details>
