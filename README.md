@@ -717,3 +717,18 @@ ORDER BY
     total_sold_quantity DESC
 ;
 ```
+
+### SQL Output:
+| fiscal_quarter | total_sold_quantity |
+|----------------|---------------------|
+| Q1             | 7005619             |
+| Q2             | 6649642             |
+| Q4             | 5042541             |
+| Q3             | 2075087             |
+
+</details>
+
+
+
+
+
