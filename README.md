@@ -386,8 +386,7 @@ SELECT
         2
     ) AS percentage_chg
 FROM
-    unique_2020 u20
-CROSS JOIN
+    unique_2020 u20,
     unique_2021 u21
 ;
 ```
