@@ -732,3 +732,11 @@ ORDER BY
 
 
 
+<details>
+  <summary><b>Question 9</b></summary>
+
+### Question 9
+Which of the three customer channels (Direct, Retailer, Distributor) contributed the most to total gross sales in fiscal year 2021? Generate a report showing the gross sales amount (in millions) for each customer channel in fiscal year 2021, along with each customer channel’s percentage contribution to the total gross sales. The final output should include the following fields:
+* channel
+* gross_sales_mln
+* percentage
