@@ -519,3 +519,32 @@ Retrieve the product(s) with the highest and lowest manufacturing cost among all
 * product
 * manufacturing_cost
 
+### SQL Code:
+```sql
+SELECT
+    mc.product_code,
+    p.product,
+    mc.manufacturing_cost
+FROM
+    gdb023.fact_manufacturing_cost mc
+INNER JOIN
+    gdb023.dim_product p
+    ON mc.product_code = p.product_code
+WHERE
+    mc.manufacturing_cost = (SELECT MAX(manufacturing_cost) FROM gdb023.fact_manufacturing_cost) OR
+    mc.manufacturing_cost = (SELECT MIN(manufacturing_cost) FROM gdb023.fact_manufacturing_cost)
+ORDER BY
+    mc.manufacturing_cost ASC
+;
+```
+
+### SQL Output:
+| product_code   | product                        | manufacturing_cost |
+|----------------|--------------------------------|--------------------|
+| A2118150101    | AQ Master wired x1 Ms         | 0.8920             |
+| A6120110206    | AQ HOME Allin1 Gen 2          | 240.5364           |
+
+
+</details>
+
+
