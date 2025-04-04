@@ -408,6 +408,7 @@ FROM
 Provide the count of unique products for each product segment. The final output should contain these fields:
 * segment
 * product_count
+
 The final output should be sorted in descending order of product count.
 
 #### SQL Code:
