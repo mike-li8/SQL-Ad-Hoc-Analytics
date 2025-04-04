@@ -548,3 +548,50 @@ ORDER BY
 </details>
 
 
+<details>
+  <summary><b>Question 6</b></summary>
+
+### Question 6
+Generate a report of the top 5 customers in the Indian market with the highest average pre-invoice discount percentage for the 2021 fiscal year. The final output should include the following fields:
+* customer_code
+* customer
+* average_pre_invoice_discount_pct
+
+
+### SQL Code:
+```sql
+WITH
+    average_pre_invoice_discount_pct_ranked AS
+    (
+        SELECT
+            c.customer,
+            AVG(pid.pre_invoice_discount_pct) AS average_pre_invoice_discount_pct,
+            DENSE_RANK() OVER(ORDER BY AVG(pid.pre_invoice_discount_pct) DESC) AS rnk
+        FROM
+            gdb023.fact_pre_invoice_deductions pid
+        INNER JOIN
+            gdb023.dim_customer c
+            ON pid.customer_code = c.customer_code
+        WHERE
+            pid.fiscal_year = 2021 AND
+            c.market = "India"
+        GROUP BY
+            c.customer
+    )
+SELECT
+    apr.customer,
+    apr.average_pre_invoice_discount_pct
+FROM
+    average_pre_invoice_discount_pct_ranked apr
+WHERE
+    rnk <= 5
+ORDER BY
+    rnk ASC
+;
+```
+
+
+
+
+
+
