@@ -757,7 +757,7 @@ WITH
             AND s.fiscal_year = gp.fiscal_year
         INNER JOIN
             dim_customer c
-		        ON s.customer_code = c.customer_code
+            ON s.customer_code = c.customer_code
         WHERE
             s.fiscal_year = 2021
         GROUP BY
