@@ -590,8 +590,16 @@ ORDER BY
 ;
 ```
 
+### SQL Output:
+| customer     | average_pre_invoice_discount_pct |
+|--------------|----------------------------------|
+| Flipkart     | 0.3083                           |
+| Viveks       | 0.3038                           |
+| Ezone        | 0.3028                           |
+| Croma        | 0.3025                           |
+| Vijay Sales  | 0.2753                           |
 
-
+</details>
 
 
 
