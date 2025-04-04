@@ -684,8 +684,36 @@ ORDER BY
 
 ### Question 8
 Which fiscal quarter of fiscal year 2020 had the highest total quantity of products sold? Generate a report showing total quantity of products sold per fiscal quarter for fiscal year 2020. The final output should include the following fields:
-* `quarter`
+* `fiscal_quarter`
 * `total_sold_quantity`
 
 Sort the results in descending order of `total_sold_quantity`
 
+```sql
+WITH
+    sales_monthly_2020_with_quarters AS
+    (
+        SELECT
+            CASE
+                WHEN MONTH(s.date) IN(9,10,11) THEN 'Q1'
+                WHEN MONTH(s.date) IN(12,1,2) THEN 'Q2'
+                WHEN MONTH(s.date) IN(3,4,5) THEN 'Q3'
+                WHEN MONTH(s.date) IN(6,7,8) THEN 'Q4'
+            END AS fiscal_quarter,
+            s.sold_quantity
+        FROM
+            fact_sales_monthly s
+        WHERE
+            s.fiscal_year = 2020
+    )
+SELECT
+    sq.fiscal_quarter,
+    SUM(sq.sold_quantity) AS total_sold_quantity
+FROM
+    sales_monthly_2020_with_quarters sq
+GROUP BY
+    sq.fiscal_quarter
+ORDER BY
+    total_sold_quantity DESC
+;
+```
