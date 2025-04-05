@@ -799,8 +799,43 @@ Identify the top 3 products by total quantity sold within each product division 
 * total_sold_quantity
 * rank_order
 
-
-
+### SQL Code
+```sql
+WITH
+    total_sold_qty_by_division AS
+    (
+        SELECT
+            p.division,
+            p.product,
+            s.product_code,
+            SUM(s.sold_quantity) AS total_sold_quantity,
+            DENSE_RANK() OVER(PARTITION BY division ORDER BY SUM(s.sold_quantity) DESC) AS rank_order
+        FROM
+            fact_sales_monthly s
+        INNER JOIN
+            dim_product p
+            ON s.product_code = p.product_code
+        WHERE
+            s.fiscal_year = 2021
+        GROUP BY
+            p.division,
+            p.product,
+            s.product_code
+    )
+SELECT
+    ts.division,
+    ts.product,
+    ts.product_code,
+    ts.total_sold_quantity,
+    ts.rank_order
+FROM
+    total_sold_qty_by_division ts
+WHERE
+    ts.rank_order <= 3
+ORDER BY
+    ts.division, ts.rank_order ASC
+;
+```
 
 
 
