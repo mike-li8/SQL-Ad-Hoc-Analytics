@@ -541,10 +541,10 @@ ORDER BY
 ```
 
 ### SQL Output:
-| product_code   | product                        | manufacturing_cost |
-|----------------|--------------------------------|--------------------|
-| A2118150101    | AQ Master wired x1 Ms         | 0.8920             |
-| A6120110206    | AQ HOME Allin1 Gen 2          | 240.5364           |
+| product_code   | product                | variant   | manufacturing_cost |
+|----------------|------------------------|-----------|---------------------|
+| A2118150101    | AQ Master wired x1 Ms | Standard 1| 0.8920              |
+| A6120110206    | AQ HOME Allin1 Gen 2  | Plus 3    | 240.5364            |
 
 
 </details>
