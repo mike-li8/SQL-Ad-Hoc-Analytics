@@ -782,3 +782,34 @@ ORDER BY
 | Distributor | 188.03           | 0.11295278  |
 
 </details>
+
+
+
+
+
+
+<details>
+  <summary><b>Question 10</b></summary>
+
+### Question 10
+Identify the top 3 products by total quantity sold within each product division for fiscal year 2021. The final output should include the following fields:
+* division
+* product_code
+* product
+* total_sold_quantity
+* rank_order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
