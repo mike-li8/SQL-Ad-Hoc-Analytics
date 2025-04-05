@@ -517,6 +517,7 @@ ORDER BY
 Retrieve the product(s) with the highest and lowest manufacturing cost among all products from fiscal years 2020 to 2021. The final output should contain these fields:
 * product_code
 * product
+* variant
 * manufacturing_cost
 
 ### SQL Code:
