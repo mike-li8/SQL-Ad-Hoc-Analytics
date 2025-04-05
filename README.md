@@ -524,6 +524,7 @@ Retrieve the product(s) with the highest and lowest manufacturing cost among all
 SELECT
     mc.product_code,
     p.product,
+    p.variant,
     mc.manufacturing_cost
 FROM
     gdb023.fact_manufacturing_cost mc
