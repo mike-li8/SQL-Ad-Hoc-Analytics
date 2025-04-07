@@ -615,6 +615,7 @@ Generate a report of monthly gross sales amount for the customer 'Atliq Exclusiv
 * month
 * fiscal_year
 * gross_sales_amount
+* gross_sales_amount_last_month
 * mom_chg
 
 
@@ -646,7 +647,7 @@ WITH
     (
         SELECT
             *,
-            LAG(gs.gross_sales_amount, 1, NULL) OVER(ORDER BY gs.month ASC) AS gross_sales_last_month
+            LAG(gs.gross_sales_amount, 1, NULL) OVER(ORDER BY gs.month ASC) AS gross_sales_amount_last_month
         FROM
             gross_sales_by_month gs
     )
@@ -654,9 +655,10 @@ SELECT
     gsl.month,
     gsl.fiscal_year,
     gsl.gross_sales_amount,
+    gsl.gross_sales_amount_last_month,
     CASE
-        WHEN gsl.gross_sales_last_month IS NULL THEN NULL
-        ELSE (gsl.gross_sales_amount - gsl.gross_sales_last_month) / gsl.gross_sales_last_month
+        WHEN gsl.gross_sales_amount_last_month IS NULL THEN NULL
+        ELSE (gsl.gross_sales_amount - gsl.gross_sales_amount_last_month) / gsl.gross_sales_amount_last_month
     END AS mom_chg
 FROM
     gross_sales_with_lag gsl
