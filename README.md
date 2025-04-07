@@ -853,8 +853,8 @@ WITH
             p.variant
     )
 SELECT
-    ts.product_code,
     ts.division,
+    ts.product_code,
     ts.product,
     ts.variant,
     ts.total_sold_quantity,
