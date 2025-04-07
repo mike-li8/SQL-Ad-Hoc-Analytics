@@ -820,9 +820,10 @@ ORDER BY
 
 ### Question 10
 Identify the top 3 products by total quantity sold within each product division for fiscal year 2021. The final output should include the following fields:
-* division
 * product_code
+* division
 * product
+* variant
 * total_sold_quantity
 * rank_order
 
@@ -832,9 +833,10 @@ WITH
     total_sold_qty_by_division AS
     (
         SELECT
+            s.product_code,
             p.division,
             p.product,
-            s.product_code,
+            p.variant,
             SUM(s.sold_quantity) AS total_sold_quantity,
             DENSE_RANK() OVER(PARTITION BY division ORDER BY SUM(s.sold_quantity) DESC) AS rank_order
         FROM
@@ -845,14 +847,17 @@ WITH
         WHERE
             s.fiscal_year = 2021
         GROUP BY
+            s.product_code,
+            p.variant
             p.division,
             p.product,
-            s.product_code
+            
     )
 SELECT
+    ts.product_code,
     ts.division,
     ts.product,
-    ts.product_code,
+    ts.variant,
     ts.total_sold_quantity,
     ts.rank_order
 FROM
