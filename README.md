@@ -611,35 +611,57 @@ ORDER BY
   <summary><b>Question 7</b></summary>
 
 ### Question 7
-Generate a report of monthly gross sales amount for the customer 'Atliq Exclusive' from fiscal years 2020 to 2021. The final output should include the following fields:
+Generate a report of monthly gross sales amount for the customer 'Atliq Exclusive' from fiscal years 2020 to 2021. Also include month-over-month change in gross sales amount. The final output should include the following fields:
 * month
 * fiscal_year
 * gross_sales_amount
+* mom_chg
 
 
 ### SQL Code
 ```sql
+WITH
+    gross_sales_by_month AS
+    (
+        SELECT
+            s.date AS month,
+            s.fiscal_year,
+            SUM(s.sold_quantity * gp.gross_price) AS gross_sales_amount
+        FROM
+            fact_sales_monthly s
+        INNER JOIN
+            dim_customer c
+            ON s.customer_code = c.customer_code
+        INNER JOIN
+            fact_gross_price gp
+            ON s.product_code = gp.product_code
+            AND s.fiscal_year = gp.fiscal_year
+        WHERE
+            c.customer = "Atliq Exclusive"
+        GROUP BY
+            s.date,
+            s.fiscal_year
+    ),
+    gross_sales_with_lag AS
+    (
+        SELECT
+            *,
+            LAG(gs.gross_sales_amount, 1, NULL) OVER(ORDER BY gs.month ASC) AS gross_sales_last_month
+        FROM
+            gross_sales_by_month gs
+    )
 SELECT
-    s.date AS month,
-    s.fiscal_year,
-    ROUND(SUM(s.sold_quantity * p.gross_price), 2) AS gross_sales_amount
+    gsl.month,
+    gsl.fiscal_year,
+    gsl.gross_sales_amount,
+    CASE
+        WHEN gsl.gross_sales_last_month IS NULL THEN NULL
+        ELSE (gsl.gross_sales_amount - gsl.gross_sales_last_month) / gsl.gross_sales_last_month
+    END AS mom_chg
 FROM
-    fact_sales_monthly s
-INNER JOIN
-    dim_customer c
-    ON s.customer_code = c.customer_code
-INNER JOIN
-    fact_gross_price p
-    ON s.product_code = p.product_code
-    AND s.fiscal_year = p.fiscal_year
-WHERE
-    c.customer = "Atliq Exclusive"
-GROUP BY
-    s.date,
-    s.fiscal_year
+    gross_sales_with_lag gsl
 ORDER BY
-    month ASC
-;
+    gsl.month ASC
 ```
 
 
