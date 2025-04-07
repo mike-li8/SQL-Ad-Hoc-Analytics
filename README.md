@@ -848,10 +848,9 @@ WITH
             s.fiscal_year = 2021
         GROUP BY
             s.product_code,
-            p.variant
             p.division,
             p.product,
-            
+            p.variant
     )
 SELECT
     ts.product_code,
