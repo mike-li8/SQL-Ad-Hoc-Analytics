@@ -729,7 +729,7 @@ WITH
             END AS fiscal_quarter,
             s.sold_quantity
         FROM
-            fact_sales_monthly s
+            gdb023.fact_sales_monthly s
         WHERE
             s.fiscal_year = 2020
     )
