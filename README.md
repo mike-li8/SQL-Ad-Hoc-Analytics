@@ -662,6 +662,7 @@ FROM
     gross_sales_with_lag gsl
 ORDER BY
     gsl.month ASC
+;
 ```
 
 
