@@ -777,7 +777,7 @@ WITH
             c.channel,
             SUM(s.sold_quantity * gp.gross_price) AS gross_sales
         FROM
-            fact_sales_monthly s
+            gdb023.fact_sales_monthly s
         INNER JOIN
             gdb023.fact_gross_price gp
             ON s.product_code = gp.product_code
@@ -838,9 +838,9 @@ WITH
             SUM(s.sold_quantity) AS total_sold_quantity,
             DENSE_RANK() OVER(PARTITION BY division ORDER BY SUM(s.sold_quantity) DESC) AS rank_order
         FROM
-            fact_sales_monthly s
+            gdb023.fact_sales_monthly s
         INNER JOIN
-            dim_product p
+            gdb023.dim_product p
             ON s.product_code = p.product_code
         WHERE
             s.fiscal_year = 2021
