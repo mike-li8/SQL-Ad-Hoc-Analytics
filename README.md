@@ -628,12 +628,12 @@ WITH
             s.fiscal_year,
             SUM(s.sold_quantity * gp.gross_price) AS gross_sales_amount
         FROM
-            fact_sales_monthly s
+            gdb023.fact_sales_monthly s
         INNER JOIN
-            dim_customer c
+            gdb023.dim_customer c
             ON s.customer_code = c.customer_code
         INNER JOIN
-            fact_gross_price gp
+            gdb023.fact_gross_price gp
             ON s.product_code = gp.product_code
             AND s.fiscal_year = gp.fiscal_year
         WHERE
