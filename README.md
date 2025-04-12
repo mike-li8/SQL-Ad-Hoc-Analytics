@@ -892,14 +892,9 @@ ORDER BY
 
 
 
-## Insights Presentation for Stakeholders
-The SQL outputs were imported into Power BI to create data visualizations to aid in the data storytelling process.
+## Data Storytelling Insights Presentation for Stakeholders
 
-### 📊 View Full Presentation
-Click the link below to view the full presentation:<br>
-[🔗 **View Presentation**](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/936ed6bf522e17ccfce7066f302834b641ccdd25/RPC_4_Presentation.pdf)
-<br>
+### View Full Presentation
+Click the link below to view the full presentation:
 
-
-
-
+[🔗 **View Full Presentation**](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/936ed6bf522e17ccfce7066f302834b641ccdd25/RPC_4_Presentation.pdf)
