@@ -897,7 +897,10 @@ ORDER BY
 ## Insights Presentation for Stakeholders
 The SQL outputs were imported into Power BI to create data visualizations to aid in the data storytelling process.
 
-
+### 📊 View Full Presentation
+Click the link below to view the full presentation:<br>
+[🔗 **View Presentation**]()
+<br>
 
 
 
