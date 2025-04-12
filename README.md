@@ -882,3 +882,23 @@ ORDER BY
 | PC       | A4218110208    | AQ Digit            | Premium Misty Green | 17275            | 3          |
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+## Insights Presentation for Stakeholders
+The SQL outputs were imported into Power BI to create data visualizations to aid in the data storytelling process.
+
+
+
+
+
+
