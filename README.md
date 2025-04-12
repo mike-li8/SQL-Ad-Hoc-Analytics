@@ -899,7 +899,7 @@ The SQL outputs were imported into Power BI to create data visualizations to aid
 
 ### 📊 View Full Presentation
 Click the link below to view the full presentation:<br>
-[🔗 **View Presentation**]()
+[🔗 **View Presentation**](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/936ed6bf522e17ccfce7066f302834b641ccdd25/RPC_4_Presentation.pdf)
 <br>
 
 
