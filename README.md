@@ -897,4 +897,4 @@ ORDER BY
 ### View Full Presentation
 Click the link below to view the full presentation:
 
-[🔗 **View Full Presentation**](https://github.com/mike-li8/SQL-Ad-Hoc-Analytics/blob/936ed6bf522e17ccfce7066f302834b641ccdd25/RPC_4_Presentation.pdf)
+[🔗 **View Full Presentation**](https://raw.githubusercontent.com/mike-li8/SQL-Ad-Hoc-Analytics/main/RPC_4_Presentation.pdf)
